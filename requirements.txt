@@ -1,4 +1,4 @@
-python-telegram-bot==20.8
+python-telegram-bot
 requests==2.32.3
 colorama==0.4.6
 supabase==2.16.0
