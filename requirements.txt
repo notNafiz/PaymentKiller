@@ -5,7 +5,6 @@ certifi==2024.7.4
 charset-normalizer==3.3.2
 colorama==0.4.6
 idna==3.7
-json==2.0.9
 python-dotenv==1.0.1
 python-telegram-bot==21.2
 requests==2.32.3
