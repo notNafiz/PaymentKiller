@@ -1,6 +1,7 @@
-python-telegram-bot
-requests==2.32.3
+python-telegram-bot==20.8
+requests==2.32.4
 colorama==0.4.6
 supabase==2.16.0
 beautifulsoup4==4.12.3
 aiohttp==3.9.1
+telegram
