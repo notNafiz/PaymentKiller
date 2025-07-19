@@ -16,6 +16,8 @@ from bs4 import BeautifulSoup
 import aiohttp
 import asyncio
 
+#HOSTING ON USA RDP
+
 SUPABASE_URL = "https://xtlvcjxrqbhrpgxdyrvi.supabase.co"
 SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh0bHZjanhycWJocnBneGR5cnZpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI1NzAxNzAsImV4cCI6MjA2ODE0NjE3MH0.Qe6aONWmlvdrYaEV09WlA_GsPMS-xxGboD_aqGrYHF0"
 SUPABASE_REDEEM_TABLE = "redeem_codes"
@@ -262,7 +264,7 @@ async def check_card(card_info):
 
         async with aiohttp.ClientSession() as my_session:
             headers = {
-                "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+                "accept": "application/json",
                 "accept-language": "en-US,en;q=0.9",
                 "cache-control": "max-age=0",
                 "priority": "u=0, i",
@@ -274,7 +276,10 @@ async def check_card(card_info):
                 'sec-fetch-mode': 'cors',
                 'sec-fetch-site': 'same-site',
                 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+                "x-requested-with": "XMLHttpRequest",
             }
+
+
 
             req = await make_async_request(
                 my_session,
@@ -289,7 +294,7 @@ async def check_card(card_info):
 
             headers2 = {
                 'accept': 'application/json',
-                'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
+                "accept-language": "en-US,en;q=0.9",
                 'cache-control': 'no-cache',
                 'content-type': 'application/x-www-form-urlencoded',
                 'origin': 'https://js.stripe.com',
@@ -303,6 +308,7 @@ async def check_card(card_info):
                 'sec-fetch-mode': 'cors',
                 'sec-fetch-site': 'same-site',
                 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+                "x-requested-with": "XMLHttpRequest",
             }
 
             data2 = {
@@ -317,16 +323,16 @@ async def check_card(card_info):
                 'payment_user_agent': 'stripe.js/7eb76afb12; stripe-js-v3/7eb76afb12; payment-element; deferred-intent',
                 'referrer': DOMAIN,
                 'time_on_page': '999999',
-                'client_attribution_metadata[client_session_id]': 'd8da6475-6b4f-4df7-b6dc-d829b95ef23b',
-                'client_attribution_metadata[merchant_integration_source]': 'elements',
-                'client_attribution_metadata[merchant_integration_subtype]': 'payment-element',
-                'client_attribution_metadata[merchant_integration_version]': '2021',
-                'client_attribution_metadata[payment_intent_creation_flow]': 'deferred',
-                'client_attribution_metadata[payment_method_selection_flow]': 'merchant_specified',
-                'client_attribution_metadata[elements_session_config_id]': '418b5740-02fd-4657-bec0-d8cc92b17a8b',
-                'guid': 'cd452db8-b653-426c-a9bb-008cc8f51378eedf1e',
-                'muid': 'e9528f44-94ec-4cea-9125-432eac121ca9867ccc',
-                'sid': '5cc00089-78f2-4b14-97ad-044b66595e59d9c714',
+                "client_attribution_metadata[client_session_id]": "07e2eb4c-3306-426a-9e68-bb9a8056bfd9",
+                "client_attribution_metadata[merchant_integration_source]": "elements",
+                "client_attribution_metadata[merchant_integration_subtype]": "payment-element",
+                "client_attribution_metadata[merchant_integration_version]": "2021",
+                "client_attribution_metadata[payment_intent_creation_flow]": "deferred",
+                "client_attribution_metadata[payment_method_selection_flow]": "merchant_specified",
+                "client_attribution_metadata[elements_session_config_id]": "38c06232-81d6-42ac-9b34-6f6b712623e0",
+                "guid": "NA",
+                "muid": "b1e9b89e-3636-464a-b9d7-7a9e46a8aea2a8a9d7",
+                "sid": "02407b17-4557-442b-8e2c-711a735981ff1c971b",
                 'key': PK,
                 "_stripe_version": "2024-06-20",
             }
@@ -366,7 +372,10 @@ async def check_card(card_info):
                 'sec-fetch-mode': 'cors',
                 'sec-fetch-site': 'same-site',
                 'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36',
+                "x-requested-with": "XMLHttpRequest",
             }
+
+
             data3 = {
                 "action": "create_and_confirm_setup_intent",
                 "wc-stripe-payment-method": pmid,
